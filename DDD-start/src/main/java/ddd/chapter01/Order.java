@@ -5,7 +5,7 @@ import java.util.List;
 public class Order {
 
   private List<OrderLine> orderLines;
-  private int totalAmounts;
+  private Money totalAmounts;
   private ShippingInfo shippingInfo;
 
   public Order(List<OrderLine> orderLines, ShippingInfo shippingInfo) {
@@ -35,7 +35,7 @@ public class Order {
   private void calculateTotalAmounts() {
     this.totalAmounts = new Money(
         orderLines.stream()
-            .mapToInt(x -> x.getAmounts().getValue())
+            .mapToInt(OrderLine::getAmounts)
             .sum()
     );
   }
