@@ -43,7 +43,7 @@ public class Order {
   public void changeShipped() {
   }
 
-  public void changeShippingInfo(ShippingInfo ne써Shipping) {
+  public void changeShippingInfo(ShippingInfo newShipping) {
   }
 
   public void cancel() {
