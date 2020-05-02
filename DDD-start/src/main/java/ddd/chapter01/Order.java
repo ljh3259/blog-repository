@@ -6,9 +6,17 @@ public class Order {
 
   private List<OrderLine> orderLines;
   private int totalAmounts;
+  private ShippingInfo shippingInfo;
 
-  public Order(List<OrderLine> orderLines) {
+  public Order(List<OrderLine> orderLines, ShippingInfo shippingInfo) {
     setOrderLines(orderLines);
+    setShippingInfo(shippingInfo);
+  }
+
+  private void setShippingInfo(ShippingInfo shippingInfo) {
+    if (shippingInfo == null) {
+      throw new IllegalArgumentException("no ShippingInfo");
+    }
   }
 
   private void setOrderLines(List<OrderLine> orderLines) {
