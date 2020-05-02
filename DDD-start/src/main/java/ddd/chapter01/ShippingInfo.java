@@ -11,7 +11,8 @@ public class ShippingInfo {
   private String shippingAddress2;
   private String shippingZipcode;
 
-  public ShippingInfo(String receiverName, String receiverPhoneNumber, String shippingAddress1, String shippingAddress2, String shippingZipcode) {
+  public ShippingInfo(String receiverName, String receiverPhoneNumber, String shippingAddress1,
+                      String shippingAddress2, String shippingZipcode) {
     this.receiverName = receiverName;
     this.receiverPhoneNumber = receiverPhoneNumber;
     this.shippingAddress1 = shippingAddress1;
