@@ -3,24 +3,29 @@ package ddd.chapter01;
 public class OrderLine {
 
   private Product product;
-  private int price;
-  private int quantity;
-  private int amounts;
 
-  public OrderLine(Product product, int price, int quantity, int amounts) {
+  private Money price;
+  private int quantity;
+  private Money amounts;
+
+  public OrderLine(Product product, Money price, int quantity) {
     this.product = product;
     this.price = price;
     this.quantity = quantity;
-    this.amounts = amounts;
+    this.amounts = this.calculateAmounts();
   }
 
-  private int calculateAmounts() {
-    return price * quantity;
+  /**
+   * 구매가격을 계산한다.
+   *
+   * @return 개당 상품가격 * 구매 수량
+   */
+  private Money calculateAmounts() {
+    return price.multiply(quantity);
   }
+
 
   public int getAmounts() {
     return 0;
   }
-
-
 }
