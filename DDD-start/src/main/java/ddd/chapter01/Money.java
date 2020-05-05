@@ -1,6 +1,15 @@
 package ddd.chapter01;
 
 public class Money {
-  public Money(int sum) {
+
+  private int value;
+
+  public Money(int value) {
+    this.value = value;
   }
+
+  public int getValue() {
+    return value;
+  }
+
 }
