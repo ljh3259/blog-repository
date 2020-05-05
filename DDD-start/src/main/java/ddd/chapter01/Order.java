@@ -6,14 +6,22 @@ public class Order {
 
   // 식별자
   private String orderNumber;
+  private Orderer orderer;
   private List<OrderLine> orderLines;
   private Money totalAmounts;
   private ShippingInfo shippingInfo;
   private OrderState state;
 
-  public Order(List<OrderLine> orderLines, ShippingInfo shippingInfo) {
+  public Order(Orderer orderer, List<OrderLine> orderLines,
+               ShippingInfo shippingInfo) {
+    setOrderer(orderer);
     setOrderLines(orderLines);
     setShippingInfo(shippingInfo);
+  }
+
+  private void setOrderer(Orderer orderer) {
+    if (orderer == null) throw new IllegalArgumentException("no orderer");
+    this.orderer = orderer;
   }
 
   private void setShippingInfo(ShippingInfo shippingInfo) {
@@ -44,6 +52,11 @@ public class Order {
   }
 
 
+  /**
+   * 배송지 정보를 변경한다.
+   *
+   * @param newShippingInfo 새로운 배송지 정보
+   */
   public void changeShippingInfo(ShippingInfo newShippingInfo) {
     verifyNotYetShipped();
     setShippingInfo(newShippingInfo);
