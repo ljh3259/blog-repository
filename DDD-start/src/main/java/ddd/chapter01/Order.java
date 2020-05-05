@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Order {
 
+  // 식별자
   private String orderNumber;
   private List<OrderLine> orderLines;
   private Money totalAmounts;
