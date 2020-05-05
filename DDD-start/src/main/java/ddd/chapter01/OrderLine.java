@@ -3,6 +3,7 @@ package ddd.chapter01;
 public class OrderLine {
 
   private Product product;
+
   private Money price;
   private int quantity;
   private Money amounts;
@@ -27,5 +28,4 @@ public class OrderLine {
   public int getAmounts() {
     return 0;
   }
-
 }
