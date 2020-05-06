@@ -24,10 +24,12 @@ public class Order {
     this.orderer = orderer;
   }
 
-  private void setShippingInfo(ShippingInfo shippingInfo) {
+  private void setShippingInfo(ShippingInfo newShippingInfo) {
     if (shippingInfo == null) {
       throw new IllegalArgumentException("no ShippingInfo");
     }
+    // 밸류 타입의 데이터를 변경할 떄는 새로운 객체로 교체한다.
+    this.shippingInfo = newShippingInfo;
   }
 
   private void setOrderLines(List<OrderLine> orderLines) {
@@ -51,7 +53,7 @@ public class Order {
     );
   }
 
-
+  //도메인 모델 엔티티는 도메인 기능도 함께 제공한다
   /**
    * 배송지 정보를 변경한다.
    *
